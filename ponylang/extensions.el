@@ -4,7 +4,7 @@
 ;; Copyright (c) 2014-2015 Sylvain Benner & Contributors
 ;;
 ;; Author: Sean T Allen <sean@monkeysnatchbanana.com>
-;; URL: https://github.com/syl20bnr/spacemacs
+;; URL: https://github.com/SeanTAllen/spacemacs-ponylang-layer
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
