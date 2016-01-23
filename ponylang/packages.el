@@ -14,13 +14,14 @@
 ;; which require an initialization must be listed explicitly in the list.
 (setq ponylang-packages
     '(
-      (ponylang-mode :location (recipe
-                               :fetcher github
-                               :repo "abingham/ponylang-mode"
-                               :branch "class-indent"))
+      (ponylang-mode)
       (flycheck-pony :location (recipe
                                :fetcher github
-                               :repo "rmloveland/flycheck-pony"))))
+                               :repo "rmloveland/flycheck-pony"))
+      (pony-snippets :location (recipe
+                                :fetcher github
+                                :repo "seantallen/pony-snippets"))
+      ))
 
 (defun ponylang/init-ponylang-mode ()
   (use-package ponylang-mode
@@ -33,5 +34,16 @@
        (set-variable 'indent-tabs-mode nil)
        (set-variable 'tab-width 2))))))
 
-(defun ponylang/init-flycheck-pony ()
-  (use-package flycheck-pony))
+(when (configuration-layer/layer-usedp 'syntax-checking)
+  (defun ponylang/init-flycheck-pony ()
+    (use-package flycheck-pony)))
+
+(defun ponylang/init-pony-snippets ()
+  (setq pony-snippets-dir (spacemacs//get-package-directory 'pony-snippets))
+
+  (defun pony-snippets-initialize ()
+    (let ((snip-dir (expand-file-name "snippets" pony-snippets-dir)))
+      (add-to-list 'yas-snippet-dirs snip-dir t)
+      (yas-load-directory snip-dir)))
+
+  (with-eval-after-load 'yasnippet (pony-snippets-initialize)))
