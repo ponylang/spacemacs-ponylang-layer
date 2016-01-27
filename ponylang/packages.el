@@ -18,9 +18,7 @@
       (flycheck-pony :location (recipe
                                :fetcher github
                                :repo "rmloveland/flycheck-pony"))
-      (pony-snippets :location (recipe
-                                :fetcher github
-                                :repo "seantallen/pony-snippets"))
+      (pony-snippets)
       ))
 
 (defun ponylang/init-ponylang-mode ()
