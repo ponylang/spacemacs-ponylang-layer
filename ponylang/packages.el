@@ -15,9 +15,7 @@
 (setq ponylang-packages
     '(
       (ponylang-mode)
-      (flycheck-pony :location (recipe
-                               :fetcher github
-                               :repo "rmloveland/flycheck-pony"))
+      (flycheck-pony)
       (pony-snippets)
       ))
 
@@ -32,9 +30,9 @@
        (set-variable 'indent-tabs-mode nil)
        (set-variable 'tab-width 2))))))
 
-(when (configuration-layer/layer-usedp 'syntax-checking)
+;;(when (configuration-layer/layer-usedp 'syntax-checking)
   (defun ponylang/init-flycheck-pony ()
-    (use-package flycheck-pony)))
+    (use-package flycheck-pony))
 
 (defun ponylang/init-pony-snippets ()
   (setq pony-snippets-dir (spacemacs//get-package-directory 'pony-snippets))
