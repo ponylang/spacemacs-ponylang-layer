@@ -28,7 +28,8 @@
      'ponylang-mode-hook
      (lambda ()
        (set-variable 'indent-tabs-mode nil)
-       (set-variable 'tab-width 2))))))
+       (set-variable 'tab-width 2)
+       (spacemacs|define-text-object ":" "return value" ":" "=>"))))))
 
 ;;(when (configuration-layer/layer-usedp 'syntax-checking)
   (defun ponylang/init-flycheck-pony ()

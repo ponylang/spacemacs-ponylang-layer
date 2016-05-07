@@ -11,6 +11,9 @@ Spacemacs layer for the Pony programming language. Currently includes:
   - ponylang-mode
   - flycheck-pony
 
+Adds text object ':' that allows you to work with method return values between
+: and =>.
+
 * Install
 Clone this repo to onto your local machine and link the enclosed
 ponylang directory into =~/.emacs.d/private= then add it to
