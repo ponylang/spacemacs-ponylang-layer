@@ -36,7 +36,7 @@
     (use-package flycheck-pony))
 
 (defun ponylang/init-pony-snippets ()
-  (setq pony-snippets-dir (spacemacs//get-package-directory 'pony-snippets))
+  (setq pony-snippets-dir (configuration-layer//get-package-directory 'pony-snippets))
 
   (defun pony-snippets-initialize ()
     (let ((snip-dir (expand-file-name "snippets" pony-snippets-dir)))
